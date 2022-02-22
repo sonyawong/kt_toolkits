@@ -16,7 +16,7 @@ def read_data_from_csv(read_file, write_file):
         tmp_response_cost = list('NA' for i in range(tmp_seq_len))
 
         user_inters.append(
-            [[str(tmp_user)], [str(tmp_seq_len)], tmp_problems, tmp_skills, tmp_ans, tmp_start_time, tmp_response_cost])
+            [[str(tmp_user), str(tmp_seq_len)], tmp_problems, tmp_skills, tmp_ans, tmp_start_time, tmp_response_cost])
 
     write_txt(write_file, user_inters)
 
@@ -29,4 +29,4 @@ def write_txt(file, data):
                 f.write(','.join(d) + '\n')
 
 if __name__ == '__main__':
-    read_data_from_csv('./2015_100_skill_builders_main_problems.csv', './assist2015.txt')
+    read_data_from_csv('../data/assist2015/2015_100_skill_builders_main_problems.csv', '../data/assist2015/data.txt')
